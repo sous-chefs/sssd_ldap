@@ -4,7 +4,7 @@ This cookbook installs SSSD and configures it for LDAP authentication
 
 Requirements
 ------------
- - RHEL or a RHEL derivative OS
+ - RHEL or a RHEL derivative OS or Ubuntu
 
 Attributes
 ----------

@@ -17,11 +17,12 @@
 # limitations under the License.
 #
 
+package 'sssd' do
+  action :install
+end
+
 # Only run on RHEL
 if platform_family?('rhel')
-  package 'sssd' do
-    action :install
-  end
 
   # authconfig allows cli based intelligent manipulation of the pam.d files
   package 'authconfig' do
@@ -30,7 +31,7 @@ if platform_family?('rhel')
 
   # Have authconfig enable SSSD in the pam files
   execute 'authconfig' do
-    command 'authconfig --enablesssdauth --enablemkhomedir --update'
+    command "authconfig #{node[:sssd_ldap][:authconfig_params]}"
     action :nothing
   end
 
@@ -50,14 +51,26 @@ if platform_family?('rhel')
     notifies :run, 'execute[authconfig]'
   end
 
-  service 'sssd' do
-    supports :status => true, :restart => true, :reload => true
-    action [:enable, :start]
+elsif platform_family?('debian')
+
+  # sssd automatically modifies the PAM files with pam-auth-update and /etc/nsswitch.conf, so all that's left is to configure /etc/sssd/sssd.conf
+  template '/etc/sssd/sssd.conf' do
+    source 'sssd.conf.erb'
+    owner 'root'
+    group 'root'
+    mode 00600
+    notifies :restart, 'service[sssd]', :immediately
   end
 
-  # nscd caching will break sssd and is not necessary
-  service 'nscd' do
-    supports :status => true, :restart => true, :reload => true
-    action [:disable, :stop]
-  end
+end
+
+service 'sssd' do
+  supports :status => true, :restart => true, :reload => true
+  action [:enable, :start]
+end
+
+# nscd caching will break sssd and is not necessary
+service 'nscd' do
+  supports :status => true, :restart => true, :reload => true
+  action [:disable, :stop]
 end
