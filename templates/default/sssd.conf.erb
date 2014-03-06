@@ -9,15 +9,31 @@ filter_users = root,named,avahi,haldaemon,dbus,radiusd,news,nscd
 [pam]
 
 [domain/LDAP]
-id_provider = ldap
-auth_provider = ldap
+auth_provider = <%= node['sssd_ldap']['auth_provider'] %>
+chpass_provider = <%= node['sssd_ldap']['chpass_provider'] %>
+id_provider = <%= node['sssd_ldap']['id_provider'] %>
+cache_credentials = <%= node['sssd_ldap']['cache_credentials'] %>
+enumerate = <%= node['sssd_ldap']['enumerate'] %>
+
 ldap_schema = <%= node['sssd_ldap']['ldap_schema'] %>
 ldap_uri = <%= node['sssd_ldap']['ldap_uri'] %>
-ldap_search_base = <%= node['sssd_ldap']['ldap_search_base'] %>
-ldap_user_search_base = <%= node['sssd_ldap']['ldap_user_search_base'] %>
-ldap_group_search_base = <%= node['sssd_ldap']['ldap_group_search_base'] %>
-enumerate = <%= node['sssd_ldap']['enumerate'] %>
-cache_credentials = <%= node['sssd_ldap']['cache_credentials'] %>
-ldap_user_name = llnwUnixUsername
+
 ldap_tls_reqcert = <%= node['sssd_ldap']['ldap_tls_reqcert'] %>
 ldap_tls_cacertdir = <%= node['sssd_ldap']['ldap_tls_cacertdir'] %>
+ldap_id_use_start_tls = <%= node['sssd_ldap']['ldap_id_use_start_tls'] %>
+
+ldap_search_base = <%= node['sssd_ldap']['ldap_search_base'] %>
+ldap_user_search_base = <%= node['sssd_ldap']['ldap_user_search_base'] %>
+ldap_user_object_class = <%= node['sssd_ldap']['ldap_user_object_class'] %>
+ldap_user_name = <%= node['sssd_ldap']['ldap_user_name'] %>
+
+ldap_group_search_base = <%= node['sssd_ldap']['ldap_group_search_base'] %>
+ldap_group_object_class = <%= node['sssd_ldap']['ldap_group_object_class'] %>
+
+ldap_default_bind_dn = <%= node['sssd_ldap']['ldap_default_bind_dn'] %>
+ldap_default_authtok = <%= node['sssd_ldap']['ldap_default_authtok'] %>
+
+<% if node['sssd_ldap']['ldap_access_filter'] %>
+access_provider = <%= node['sssd_ldap']['access_provider'] %>
+ldap_access_filter = <%= node['sssd_ldap']['ldap_access_filter'] %>
+<% end %>
