@@ -30,7 +30,7 @@ if platform_family?('rhel')
 
   # Have authconfig enable SSSD in the pam files
   execute 'authconfig' do
-    command 'authconfig --enablesssdauth --enablemkhomedir --update'
+    command "authconfig #{node[:sssd_ldap][:authconfig_params]}"
     action :nothing
   end
 

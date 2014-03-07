@@ -39,3 +39,5 @@ default['sssd_ldap']['ldap_tls_cacertdir'] = '/etc/pki/tls/certs'
 
 default['sssd_ldap']['ldap_default_bind_dn'] = 'cn=bindaccount,dc=yourcompany,dc=com'
 default['sssd_ldap']['ldap_default_authtok'] = 'bind_password'
+
+default['sssd_ldap']['authconfig_params'] = '--enablesssd --enablesssdauth --enablelocauthorize --update'
