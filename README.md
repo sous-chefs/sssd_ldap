@@ -4,14 +4,35 @@ This cookbook installs SSSD and configures it for LDAP authentication
 
 Requirements
 ------------
- - RHEL or a RHEL derivative OS
+
+### Platform:
+
+* Redhat
+* Centos
+* Amazon
+* Scientific
+* Oracle
+
+### Cookbooks:
+
+*No dependencies defined*
 
 Attributes
 ----------
 
-Usage
------
+*No attributes defined*
 
-License and Authors
--------------------
-Author:: Tim Smith (<tsmith@llnw.com>)
+Recipes
+-------
+
+*No recipes defined*
+
+License and Author
+------------------
+
+Author:: Tim Smith - Limelights Networks, Inc (<tsmith@llnw.com>)
+
+Copyright:: 2013, Tim Smith - Limelights Networks, Inc
+
+License:: All rights reserved
+
