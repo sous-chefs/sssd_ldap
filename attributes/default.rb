@@ -42,5 +42,5 @@ default['sssd_ldap']['ldap_default_authtok'] = 'bind_password'
 
 default['sssd_ldap']['authconfig_params'] = '--enablesssd --enablesssdauth --enablelocauthorize --update'
 
-#default['sssd_ldap']['access_provider'] = nil
+default['sssd_ldap']['access_provider'] = nil
 default['sssd_ldap']['ldap_access_filter'] = nil
