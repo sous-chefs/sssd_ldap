@@ -33,4 +33,7 @@ ldap_group_object_class = <%= node['sssd_ldap']['ldap_group_object_class'] %>
 ldap_default_bind_dn = <%= node['sssd_ldap']['ldap_default_bind_dn'] %>
 ldap_default_authtok = <%= node['sssd_ldap']['ldap_default_authtok'] %>
 
-<%= "ldap_access_filter = #{node['sssd_ldap']['ldap_access_filter']}" if !node['sssd_ldap']['ldap_access_filter'].nil? %>
+<%= if node['sssd_ldap']['ldap_access_filter'] %>
+access_provider = <%= node['sssd_ldap']['access_provider'] %>
+ldap_access_filter = <%= node['sssd_ldap']['ldap_access_filter'] %>
+<%= end %>
