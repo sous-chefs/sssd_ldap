@@ -40,14 +40,14 @@ if platform_family?('rhel')
     source 'nsswitch.conf.erb'
     owner 'root'
     group 'root'
-    mode 00644
+    mode '0644'
   end
 
   template '/etc/sssd/sssd.conf' do
     source 'sssd.conf.erb'
     owner 'root'
     group 'root'
-    mode 00600
+    mode '0600'
     notifies :run, 'execute[authconfig]', :immediately  # this needs to run immediately so it doesn't happen after sssd service block below, or sssd is not running when recipe completes
   end
 
@@ -58,7 +58,7 @@ elsif platform_family?('debian')
     source 'sssd.conf.erb'
     owner 'root'
     group 'root'
-    mode 00600
+    mode '0600'
     notifies :restart, 'service[sssd]', :immediately
   end
 
