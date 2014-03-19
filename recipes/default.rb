@@ -31,7 +31,7 @@ if platform_family?('rhel')
 
   # Have authconfig enable SSSD in the pam files
   execute 'authconfig' do
-    command "authconfig #{node[:sssd_ldap][:authconfig_params]}"
+    command "authconfig #{node['sssd_ldap']['authconfig_params']}"
     action :nothing
   end
 
@@ -43,25 +43,19 @@ if platform_family?('rhel')
     mode '0644'
   end
 
-  template '/etc/sssd/sssd.conf' do
-    source 'sssd.conf.erb'
-    owner 'root'
-    group 'root'
-    mode '0600'
-    notifies :run, 'execute[authconfig]', :immediately  # this needs to run immediately so it doesn't happen after sssd service block below, or sssd is not running when recipe completes
-  end
+end
 
-elsif platform_family?('debian')
-
-  # sssd automatically modifies the PAM files with pam-auth-update and /etc/nsswitch.conf, so all that's left is to configure /etc/sssd/sssd.conf
-  template '/etc/sssd/sssd.conf' do
-    source 'sssd.conf.erb'
-    owner 'root'
-    group 'root'
-    mode '0600'
+# sssd automatically modifies the PAM files with pam-auth-update and /etc/nsswitch.conf, so all that's left is to configure /etc/sssd/sssd.conf
+template '/etc/sssd/sssd.conf' do
+  source 'sssd.conf.erb'
+  owner 'root'
+  group 'root'
+  mode '0600'
+  if platform_family?('rhel')
+    notifies :run, 'execute[authconfig]', :immediately # this needs to run immediately so it doesn't happen after sssd service block below, or sssd is not running when recipe completes
+  else
     notifies :restart, 'service[sssd]', :immediately
   end
-
 end
 
 service 'sssd' do
