@@ -12,6 +12,7 @@ Requirements
 * Amazon
 * Scientific
 * Oracle
+* Ubuntu
 
 ### Cookbooks:
 
