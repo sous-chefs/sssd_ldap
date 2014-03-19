@@ -33,7 +33,7 @@ License and Author
 
 Author:: Tim Smith - Limelights Networks, Inc (<tsmith@llnw.com>)
 
-Copyright:: 2013, Tim Smith - Limelights Networks, Inc
+Copyright:: 2013-2014, Tim Smith - Limelights Networks, Inc
 
 License:: All rights reserved
 
