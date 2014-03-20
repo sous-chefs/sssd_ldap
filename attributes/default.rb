@@ -29,6 +29,7 @@ default['sssd_ldap']['ldap_search_base'] = 'dc=yourcompany,dc=com'
 default['sssd_ldap']['ldap_user_search_base'] = 'ou=People,dc=yourcompany,dc=com'
 default['sssd_ldap']['ldap_user_object_class'] = 'posixAccount'
 default['sssd_ldap']['ldap_user_name'] = 'uid'
+default['sssd_ldap']['shell_fallback'] = '/bin/bash'
 
 default['sssd_ldap']['ldap_group_search_base'] = 'ou=Groups,dc=yourcompany,dc=com'
 default['sssd_ldap']['ldap_group_object_class'] = 'posixGroup'
