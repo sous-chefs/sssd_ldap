@@ -1,5 +1,5 @@
 AllCops:
-  Excludes:
+  Exclude:
     - vendor/**
 
 AlignParameters:
@@ -12,4 +12,7 @@ LineLength:
   Enabled: false
 MethodLength:
   Max: 30
-
+NumericLiterals:
+  Enabled: false
+SingleSpaceBeforeFirstArg:
+  Enabled: false
