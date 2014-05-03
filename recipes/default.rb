@@ -67,5 +67,5 @@ end
 service 'nscd' do
   supports :status => true, :restart => true, :reload => true
   action [:disable, :stop]
-  provider Chef::Provider::Service::Upstart if platform == 'ubuntu' && platform_version.to_f >= 13.04
+  provider Chef::Provider::Service::Upstart if node['platform'] == 'ubuntu' && node['platform_version'].to_f >= 13.04
 end
