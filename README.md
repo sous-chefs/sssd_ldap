@@ -12,11 +12,7 @@ Requirements
 * Amazon
 * Scientific
 * Oracle
-* Ubuntu
-
-### Cookbooks:
-
-*No dependencies defined*
+* Ubuntu (10.04 / 12.04 / 14.04)
 
 Attributes
 ----------
@@ -26,7 +22,7 @@ Attributes
 Recipes
 -------
 
-*No recipes defined*
+*default: Installs and configures sssd daemon
 
 License and Author
 ------------------
