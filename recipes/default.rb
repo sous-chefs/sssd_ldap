@@ -21,6 +21,13 @@ package 'sssd' do
   action :install
 end
 
+# Only Run on Debian/Ubuntu
+if platform_family?('debian')
+  package 'sssd-tools' do
+    action :install
+  end
+end
+
 # Only run on RHEL
 if platform_family?('rhel')
 
