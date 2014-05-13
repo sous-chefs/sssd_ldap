@@ -31,7 +31,7 @@ shell_fallback = <%= node['sssd_ldap']['shell_fallback'] %>
 ldap_group_search_base = <%= node['sssd_ldap']['ldap_group_search_base'] %>
 ldap_group_object_class = <%= node['sssd_ldap']['ldap_group_object_class'] %>
 
-<% if node['sssd_ldap']['ldap_default_bind_dn'] %>ldap_default_bind_dn = <%= n ode['sssd_ldap']['ldap_default_bind_dn'] %><% end %>
+<% if node['sssd_ldap']['ldap_default_bind_dn'] %>ldap_default_bind_dn = <%= node['sssd_ldap']['ldap_default_bind_dn'] %><% end %>
 <% if node['sssd_ldap']['ldap_default_authtok'] %>ldap_default_authtok = <%= node['sssd_ldap']['ldap_default_authtok'] %><% end %>
 
 <% if node['sssd_ldap']['ldap_access_filter'] %>
