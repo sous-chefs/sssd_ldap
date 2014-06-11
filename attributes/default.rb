@@ -16,6 +16,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 default['sssd_ldap']['id_provider'] = 'ldap'
 default['sssd_ldap']['auth_provider'] = 'ldap'
 default['sssd_ldap']['chpass_provider'] = 'ldap'
