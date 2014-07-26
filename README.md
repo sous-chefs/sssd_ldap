@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.org/tas50/chef-sssd_ldap.svg?branch=master)](https://travis-ci.org/tas50/chef-sssd_ldap)
-
 sssd_ldap Cookbook
 ==================
+[![Build Status](https://travis-ci.org/tas50/chef-sssd_ldap.svg?branch=master)](https://travis-ci.org/tas50/chef-sssd_ldap)
+
 This cookbook installs SSSD and configures it for LDAP authentication
 
 Requirements
