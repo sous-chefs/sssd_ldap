@@ -1,6 +1,6 @@
 [sssd]
 config_file_version = 2
-services = nss, pam
+services = nss, pam, sudo 
 domains = LDAP
 
 [nss]
@@ -11,6 +11,7 @@ filter_users = root,named,avahi,haldaemon,dbus,radiusd,news,nscd
 [domain/LDAP]
 auth_provider = <%= node['sssd_ldap']['auth_provider'] %>
 chpass_provider = <%= node['sssd_ldap']['chpass_provider'] %>
+sudo_provider = <%= node['sssd_ldap']['sudo_provider'] %>
 id_provider = <%= node['sssd_ldap']['id_provider'] %>
 cache_credentials = <%= node['sssd_ldap']['cache_credentials'] %>
 enumerate = <%= node['sssd_ldap']['enumerate'] %>
@@ -41,3 +42,6 @@ ldap_group_object_class = <%= node['sssd_ldap']['ldap_group_object_class'] %>
 access_provider = <%= node['sssd_ldap']['access_provider'] %>
 ldap_access_filter = <%= node['sssd_ldap']['ldap_access_filter'] %>
 <% end %>
+
+min_id = <%= node['sssd_ldap']['min_id'] %>
+max_id = <%= node['sssd_ldap']['max_id'] %>
