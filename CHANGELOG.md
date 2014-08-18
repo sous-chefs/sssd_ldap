@@ -1,6 +1,9 @@
 # CHANGELOG for sssd_ldap
 
 This file is used to list changes made in each version of sssd_ldap.
+## 1.0.2:
+* Added support for min_id / max_id
+* Added support for conditional sudoers
 
 ## 1.0.0:
 * Switch modes to be strings not ints
