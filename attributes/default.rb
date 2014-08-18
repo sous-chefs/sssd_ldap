@@ -51,5 +51,5 @@ default['sssd_ldap']['ldap_access_filter'] = nil # Can use simple LDAP filter su
 
 default['sssd_ldap']['min_id'] = '1'
 default['sssd_ldap']['max_id'] = '0'
-default['sssd_ldap']['ldap_sudo'] = 'true'
+default['sssd_ldap']['ldap_sudo'] = 'false'
 
