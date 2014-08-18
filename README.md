@@ -20,11 +20,17 @@ Attributes
 ----------
 
 ['sssd_ldap']['id_provider'] = 'ldap'
+
 ['sssd_ldap']['auth_provider'] = 'ldap'
+
 ['sssd_ldap']['chpass_provider'] = 'ldap'
+
 ['sssd_ldap']['sudo_provider'] = 'ldap'
+
 ['sssd_ldap']['enumerate'] = 'true'
+
 ['sssd_ldap']['cache_credentials'] = 'false'
+
 ['sssd_ldap']['ldap_schema'] = 'rfc2307bis'
 ['sssd_ldap']['ldap_uri'] = 'ldap://something.yourcompany.com'
 ['sssd_ldap']['ldap_search_base'] = 'dc=yourcompany,dc=com'
