@@ -24,4 +24,5 @@ publickey:  nisplus
 
 automount:  files nisplus
 aliases:    files nisplus
-sudoers:    files ldap
+
+sudoers:    files <% if ['sssd_ldap']['ldap_sudo'] = 'true' %>ldap<% end %>
