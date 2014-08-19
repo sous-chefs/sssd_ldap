@@ -1,6 +1,6 @@
 [sssd]
 config_file_version = 2
-services = nss, pam<% if ['sssd_ldap']['ldap_sudo'] = 'true' %>, sudo<% end %>
+services = nss, pam<% if node['sssd_ldap']['ldap_sudo'] == 'true' %>, sudo<% end %>
 domains = LDAP
 
 [nss]
@@ -11,7 +11,7 @@ filter_users = root,named,avahi,haldaemon,dbus,radiusd,news,nscd
 [domain/LDAP]
 auth_provider = <%= node['sssd_ldap']['auth_provider'] %>
 chpass_provider = <%= node['sssd_ldap']['chpass_provider'] %>
-<% if ['sssd_ldap']['ldap_sudo'] = 'true' %>sudo_provider = <%= node['sssd_ldap']['sudo_provider'] %><% end %>
+<% if node['sssd_ldap']['ldap_sudo'] == 'true' %>sudo_provider = <%= node['sssd_ldap']['sudo_provider'] %><% end %>
 id_provider = <%= node['sssd_ldap']['id_provider'] %>
 cache_credentials = <%= node['sssd_ldap']['cache_credentials'] %>
 enumerate = <%= node['sssd_ldap']['enumerate'] %>

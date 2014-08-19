@@ -23,7 +23,7 @@ end
 
 package 'libsss_sudo' do
   action :install
-  only_if { ['sssd_ldap']['ldap_sudo'] = 'true' }
+  only_if { node['sssd_ldap']['ldap_sudo'] == 'true' }
 end
 
 # Only run on RHEL
