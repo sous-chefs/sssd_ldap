@@ -21,6 +21,11 @@ package 'sssd' do
   action :install
 end
 
+package 'libsss_sudo' do
+  action :install
+  only_if { node['sssd_ldap']['ldap_sudo'] == 'true' }
+end
+
 # Only run on RHEL
 if platform_family?('rhel')
 

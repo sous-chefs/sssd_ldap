@@ -20,12 +20,12 @@
 default['sssd_ldap']['id_provider'] = 'ldap'
 default['sssd_ldap']['auth_provider'] = 'ldap'
 default['sssd_ldap']['chpass_provider'] = 'ldap'
+default['sssd_ldap']['sudo_provider'] = 'ldap'
 default['sssd_ldap']['enumerate'] = 'true'
 default['sssd_ldap']['cache_credentials'] = 'false'
 
 default['sssd_ldap']['ldap_schema'] = 'rfc2307bis'
 default['sssd_ldap']['ldap_uri'] = 'ldap://something.yourcompany.com'
-
 default['sssd_ldap']['ldap_search_base'] = 'dc=yourcompany,dc=com'
 default['sssd_ldap']['ldap_user_search_base'] = 'ou=People,dc=yourcompany,dc=com'
 default['sssd_ldap']['ldap_user_object_class'] = 'posixAccount'
@@ -48,3 +48,7 @@ default['sssd_ldap']['authconfig_params'] = '--enablesssd --enablesssdauth --ena
 
 default['sssd_ldap']['access_provider'] = nil # Should be set to 'ldap'
 default['sssd_ldap']['ldap_access_filter'] = nil # Can use simple LDAP filter such as 'uid=abc123' or more expressive LDAP filters like '(&(objectClass=employee)(department=ITSupport))'
+
+default['sssd_ldap']['min_id'] = '1'
+default['sssd_ldap']['max_id'] = '0'
+default['sssd_ldap']['ldap_sudo'] = 'false'
