@@ -57,9 +57,9 @@ Recipes
 License and Author
 ------------------
 
-Author:: Tim Smith - Limelights Networks, Inc (<tsmith@llnw.com>)
+Author:: Tim Smith - (<tsmith84@gmail.com>)
 
-Copyright:: 2013-2014, Tim Smith - Limelights Networks, Inc
+Copyright:: 2013-2014, Limelights Networks, Inc
 
 License:: Apache 2.0
 
