@@ -56,11 +56,14 @@ template '/etc/sssd/sssd.conf' do
   owner 'root'
   group 'root'
   mode '0600'
+
   if platform_family?('rhel')
-    notifies :run, 'execute[authconfig]', :immediately # this needs to run immediately so it doesn't happen after sssd service block below, or sssd is not running when recipe completes
-  else
-    notifies :restart, 'service[sssd]', :immediately
+    # this needs to run immediately so it doesn't happen after sssd
+    # service block below, or sssd won't start when recipe completes
+    notifies :run, 'execute[authconfig]', :immediately
   end
+
+  notifies :restart, 'service[sssd]'
 end
 
 service 'sssd' do
