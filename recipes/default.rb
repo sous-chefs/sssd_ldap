@@ -23,7 +23,7 @@ end
 
 package 'libsss_sudo' do
   action :install
-  only_if { node['sssd_ldap']['ldap_sudo'] == 'true' }
+  only_if { node['sssd_ldap']['ldap_sudo'] }
 end
 
 # Only run on RHEL
@@ -34,20 +34,32 @@ if platform_family?('rhel')
     action :install
   end
 
-  # Have authconfig enable SSSD in the pam files
-  execute 'authconfig' do
-    command "authconfig #{node['sssd_ldap']['authconfig_params']}"
+  # https://bugzilla.redhat.com/show_bug.cgi?id=975082
+  ruby_block 'nsswitch sudoers' do
+    block do
+      edit = Chef::Util::FileEdit.new '/etc/nsswitch.conf'
+      edit.insert_line_if_no_match(/^sudoers:/, 'sudoers: files')
+
+      if node['sssd_ldap']['ldap_sudo']
+        # Add sss to the line if it's not there.
+        edit.search_file_replace(/^sudoers:([ \t]*(?!sss\b)\w+)*[ \t]*$/, '\0 sss')
+      else
+        # Remove sss from the line if it is there.
+        edit.search_file_replace(/^(sudoers:.*)\bsss[ \t]*/, '\1')
+      end
+
+      edit.write_file
+    end
+
     action :nothing
   end
 
-  # Make sure sss is added for auth in nsswitch
-  template '/etc/nsswitch.conf' do
-    source 'nsswitch.conf.erb'
-    owner 'root'
-    group 'root'
-    mode '0644'
+  # Have authconfig enable SSSD in the pam files
+  execute 'authconfig' do
+    command "authconfig #{node['sssd_ldap']['authconfig_params']}"
+    notifies :run, 'ruby_block[nsswitch sudoers]', :immediately
+    action :nothing
   end
-
 end
 
 # sssd automatically modifies the PAM files with pam-auth-update and /etc/nsswitch.conf, so all that's left is to configure /etc/sssd/sssd.conf

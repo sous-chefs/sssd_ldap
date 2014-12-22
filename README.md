@@ -46,7 +46,7 @@ Attributes
 | ['ldap_access_filter'] | nil| Can use simple LDAP filter such as 'uid=abc123' or more expressive LDAP filters like '(&(objectClass=employee)(department=ITSupport))' | 
 | ['min_id'] | '1' | default, used to ignore lower uid/gid's | 
 | ['max_id'] | '0' | default, used to ignore higher uid/gid's | 
-| ['ldap_sudo'] | 'false' | Adds ldap enabled sudoers (true/false) |
+| ['ldap_sudo'] | false | Adds ldap enabled sudoers (true/false) |
 
 
 Recipes
