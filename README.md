@@ -38,7 +38,7 @@ Attributes
 | ['ldap_group_object_class'] | 'posixGroup' | |
 | ['ldap_id_use_start_tls'] | 'true' | |
 | ['ldap_tls_reqcert'] | 'never' | |
-| ['ldap_tls_cacertdir'] | '/etc/pki/tls/certs' | |
+| ['ldap_tls_cacert'] | '/etc/pki/tls/certs/ca-bundle.crt' or '/etc/ssl/certs/ca-certificates.crt' | defaults for RHEL and others respectively |
 | ['ldap_default_bind_dn'] | 'cn=bindaccount,dc=yourcompany,dc=com' | if you have a domain that doesn't require binding set this attributes to nil
 | ['ldap_default_authtok'] | 'bind_password' | if you have a domain that doesn't require binding set this to nil | 
 | ['authconfig_params'] | '--enablesssd --enablesssdauth --enablelocauthorize --update' | |
@@ -53,6 +53,22 @@ Recipes
 -------
 
 *default: Installs and configures sssd daemon
+
+CA Certificates
+---------------
+
+If you manage your own CA then the easiest way to inject the certificate for system-wide use is as follows:
+
+### RHEL
+
+    cp ca.crt /etc/pki/ca-trust/source/anchors
+    update-ca-trust enable
+    update-ca-trust extract
+
+### Debian
+
+    cp ca.crt /usr/local/share/ca-certificates
+    update-ca-certificates
 
 License and Author
 ------------------

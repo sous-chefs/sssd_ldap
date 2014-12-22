@@ -38,7 +38,7 @@ default['sssd_ldap']['ldap_group_object_class'] = 'posixGroup'
 
 default['sssd_ldap']['ldap_id_use_start_tls'] = 'true'
 default['sssd_ldap']['ldap_tls_reqcert'] = 'never'
-default['sssd_ldap']['ldap_tls_cacertdir'] = '/etc/pki/tls/certs'
+default['sssd_ldap']['ldap_tls_cacert'] = value_for_platform_family('rhel' => '/etc/pki/tls/certs/ca-bundle.crt', 'default' => '/etc/ssl/certs/ca-certificates.crt')
 
 # if you have a domain that doesn't require binding set these two attributes to nil
 default['sssd_ldap']['ldap_default_bind_dn'] = 'cn=bindaccount,dc=yourcompany,dc=com'
