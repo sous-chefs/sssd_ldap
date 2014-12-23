@@ -83,15 +83,14 @@ template '/etc/sssd/sssd.conf' do
   notifies :restart, 'service[sssd]'
 end
 
+# NSCD and SSSD don't play well together.
+# https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/usingnscd-sssd.html
+package 'nscd' do
+  action :remove
+end
+
 service 'sssd' do
   supports :status => true, :restart => true, :reload => true
   action [:enable, :start]
-  provider Chef::Provider::Service::Upstart if node['platform'] == 'ubuntu' && node['platform_version'].to_f >= 13.04
-end
-
-# nscd caching will break sssd and is not necessary
-service 'nscd' do
-  supports :status => true, :restart => true, :reload => true
-  action [:disable, :stop]
   provider Chef::Provider::Service::Upstart if node['platform'] == 'ubuntu' && node['platform_version'].to_f >= 13.04
 end
