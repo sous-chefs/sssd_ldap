@@ -21,9 +21,14 @@ package 'sssd' do
   action :install
 end
 
-package 'libsss_sudo' do
+package 'libsss-sudo' do
+  package_name value_for_platform(
+                 'debian' => { '< 8.0' => 'libsss-sudo0' },
+                 'ubuntu' => { '< 13.04' => 'libsss-sudo0' }
+               )
+
   action :install
-  only_if { node['sssd_ldap']['ldap_sudo'] }
+  only_if { platform_family?('debian') && node['sssd_ldap']['ldap_sudo'] }
 end
 
 # Only run on RHEL
