@@ -1,4 +1,4 @@
-AlignParameters:
+Style/SingleSpaceBeforeFirstArg:
   Enabled: false
 Encoding:
   Enabled: false
