@@ -35,6 +35,7 @@ default['sssd_ldap']['shell_fallback'] = '/bin/bash'
 
 default['sssd_ldap']['ldap_group_search_base'] = 'ou=Groups,dc=yourcompany,dc=com'
 default['sssd_ldap']['ldap_group_object_class'] = 'posixGroup'
+default['sssd_ldap']['ldap_group_name'] = 'cn'
 
 default['sssd_ldap']['ldap_id_use_start_tls'] = 'true'
 default['sssd_ldap']['ldap_tls_reqcert'] = 'never'
