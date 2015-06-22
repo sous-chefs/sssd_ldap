@@ -18,6 +18,12 @@ Requirements
 
 Attributes
 ----------
+
+Arbitrary key/value pairs may be added to the `['sssd_conf']` attribute
+object.  These key/values will be expanded in the domain block of
+`sssd.conf`.  This allows you to set any SSSD configuration value you
+want, not just ones provided by the attributes in this cookbook.
+
 | Attribute | Value | Comment |
 | -------------  | -------------  | -------------  |
 | `['sssd_conf']['id_provider']` | `'ldap'` | |
