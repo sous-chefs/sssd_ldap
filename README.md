@@ -41,12 +41,12 @@ Attributes
 | `['sssd_conf']['ldap_tls_cacert']` | `'/etc/pki/tls/certs/ca-bundle.crt'` or `'/etc/ssl/certs/ca-certificates.crt'` | defaults for RHEL and others respectively |
 | `['sssd_conf']['ldap_default_bind_dn']` | `'cn=bindaccount,dc=yourcompany,dc=com'` | if you have a domain that doesn't require binding set this attributes to nil
 | `['sssd_conf']['ldap_default_authtok']` | `'bind_password'` | if you have a domain that doesn't require binding set this to nil | 
-| `['sssd_conf']['authconfig_params']` | `'--enablesssd --enablesssdauth --enablelocauthorize --update'` | |
+| `['authconfig_params']` | `'--enablesssd --enablesssdauth --enablelocauthorize --update'` | |
 | `['sssd_conf']['access_provider']` | `nil` | Should be set to `'ldap'` |
-| `['sssd_conf']['ldap_access_filter']` | nil| Can use simple LDAP filter such as `'uid=abc123'` or more expressive LDAP filters like `'(&(objectClass=employee)(department=ITSupport))'` | 
+| `['sssd_conf']['ldap_access_filter']` | `nil`| Can use simple LDAP filter such as `'uid=abc123'` or more expressive LDAP filters like `'(&(objectClass=employee)(department=ITSupport))'` | 
 | `['sssd_conf']['min_id']` | `'1'` | default, used to ignore lower uid/gid's | 
 | `['sssd_conf']['max_id']` | `'0'` | default, used to ignore higher uid/gid's | 
-| `['sssd_conf']['ldap_sudo']` | `false` | Adds ldap enabled sudoers (true/false) |
+| `['ldap_sudo']` | `false` | Adds ldap enabled sudoers (true/false) |
 
 
 Recipes
