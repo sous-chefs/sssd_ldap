@@ -1,6 +1,7 @@
 sssd_ldap Cookbook
 ==================
 [![Build Status](https://travis-ci.org/tas50/chef-sssd_ldap.svg?branch=master)](https://travis-ci.org/tas50/chef-sssd_ldap)
+[![Cookbook Version](https://img.shields.io/cookbook/v/sssd_ldap.svg)](https://supermarket.chef.io/cookbooks/sssd_ldap)
 
 This cookbook installs SSSD and configures it for LDAP authentication.  As part of the setup of SSSD it will also remove the NSCD package as NSCD is known to interfere with SSSD (https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/usingnscd-sssd.html).
 
