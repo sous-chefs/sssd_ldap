@@ -77,7 +77,7 @@ License and Author
 Author:: Tim Smith - (<tsmith84@gmail.com>)
 
 ```text
-Copyright:: 2013-2014, Limelights Networks, Inc
+Copyright:: 2013-2014, Limelight Networks, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
