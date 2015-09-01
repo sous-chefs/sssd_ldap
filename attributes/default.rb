@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: sssd_ldap
-# Attribute:: default
+# Attributes:: default
 #
 # Copyright 2013-2014, Limelight Networks, Inc.
 #

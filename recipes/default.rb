@@ -1,4 +1,5 @@
 #
+# Author:: Tim Smith(<tsmith84@gmail.com>)
 # Cookbook Name:: sssd_ldap
 # Recipe:: default
 #
