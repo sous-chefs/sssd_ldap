@@ -2,6 +2,25 @@
 
 This file is used to list changes made in each version of sssd_ldap.
 
+## 2.0.0:
+- BREAKING: Change default['sssd_ldap']['ldap_tls_cacertdir'] to default['sssd_ldap']['ldap_tls_cacert'] and use per platform value
+- BREAKING: default['sssd_ldap']['ldap_sudo'] is a boolean value now not a string
+- BREAKING: nsswitch.conf is no longer templated, but edited inline instead
+- BREAKING: NSCD package is now removed instead of stopping the service
+- Debian support added
+- ldap_group_name added to sssd.confg via default['sssd_ldap']['ldap_group_name'] attribute
+- source_url and issues_url added to the metadata
+- sssd is always restarted after templating the config now
+- Chefspec unit tests added
+- Use standard chef .gitignore file
+- Update rules in the .rubocop.yml file
+- Have Travis test on Ruby 2.2 and remove 1.9 from testing
+- Add a Berksfile
+- Update Gemfile deps and break out into groups
+- Add a license file
+- Add cookbook version badge to the readme
+- Additional files added to the chefignore file
+
 ## 1.0.2:
 * Added support for min_id / max_id
 * Added support for conditional sudoers
