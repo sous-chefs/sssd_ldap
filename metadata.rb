@@ -9,3 +9,5 @@ version          '1.0.3'
 %w( redhat centos amazon scientific oracle ubuntu debian ).each do |os|
   supports os
 end
+source_url 'https://github.com/tas50/sssd_ldap' if respond_to?(:source_url)
+issues_url 'https://github.com/tas50/sssd_ldap/issues' if respond_to?(:source_url)
