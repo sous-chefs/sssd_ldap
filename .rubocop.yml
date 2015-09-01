@@ -1,3 +1,7 @@
+AllCops:
+  Exclude:
+    - vendor/**/*
+
 Style/SingleSpaceBeforeFirstArg:
   Enabled: false
 Encoding:
