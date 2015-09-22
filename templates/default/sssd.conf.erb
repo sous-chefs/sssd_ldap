@@ -1,12 +1,14 @@
 [sssd]
 config_file_version = 2
-services = nss, pam<% if node['sssd_ldap']['ldap_sudo'] %>, sudo<% end %>
+services = nss, pam<% if node['sssd_ldap']['ldap_sudo'] %>, sudo<% end %><% if node['sssd_ldap']['ldap_ssh'] %>, ssh<% end %>
 domains = LDAP
 
 [nss]
 filter_users = root,named,avahi,haldaemon,dbus,radiusd,news,nscd
 
 [pam]
+
+<% if node['sssd_ldap']['ldap_ssh'] %>[ssh]<% end %>
 
 [domain/LDAP]
 auth_provider = <%= node['sssd_ldap']['auth_provider'] %>

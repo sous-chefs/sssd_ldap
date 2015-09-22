@@ -48,6 +48,7 @@ Attributes
 | ['min_id'] | '1' | default, used to ignore lower uid/gid's |
 | ['max_id'] | '0' | default, used to ignore higher uid/gid's |
 | ['ldap_sudo'] | false | Adds ldap enabled sudoers (true/false) |
+| ['ldap_ssh'] | false | Adds ldap enabled ssh (true/false) |
 
 
 Recipes
