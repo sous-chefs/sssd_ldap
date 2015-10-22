@@ -10,4 +10,4 @@ version          '2.0.0'
   supports os
 end
 source_url 'https://github.com/tas50/chef-sssd_ldap' if respond_to?(:source_url)
-issues_url 'https://github.com/tas50/chef-sssd_ldap/issues' if respond_to?(:source_url)
+issues_url 'https://github.com/tas50/chef-sssd_ldap/issues' if respond_to?(:issues_url)
