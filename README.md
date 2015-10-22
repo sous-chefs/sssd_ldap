@@ -7,8 +7,7 @@ This cookbook installs SSSD and configures it for LDAP authentication.  As part 
 
 Requirements
 ------------
-
-### Platform:
+#### Platforms
 
 * Redhat
 * Centos
@@ -16,6 +15,13 @@ Requirements
 * Scientific
 * Oracle
 * Ubuntu (10.04 / 12.04 / 14.04)
+
+#### Chef
+- Chef 11+
+
+#### Cookbooks
+- none
+
 
 Attributes
 ----------
@@ -58,7 +64,6 @@ want, not just ones provided by the attributes in this cookbook.
 
 Recipes
 -------
-
 * default: Installs and configures sssd daemon
 
 CA Certificates
@@ -77,14 +82,15 @@ If you manage your own CA then the easiest way to inject the certificate for sys
     cp ca.crt /usr/local/share/ca-certificates
     update-ca-certificates
 
-License and Author
-------------------
 
-Author:: Tim Smith - (<tsmith84@gmail.com>)
+License & Authors
+-----------------
+
+**Author:** Tim Smith - (<tsmith84@gmail.com>)
+
+**Copyright:** 2013-2015, Limelight Networks, Inc.
 
 ```text
-Copyright:: 2013-2014, Limelight Networks, Inc.
-
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
