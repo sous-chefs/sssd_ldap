@@ -1,4 +1,5 @@
 #
+# Author:: Tim Smith(<tsmith84@gmail.com>)
 # Cookbook Name:: sssd_ldap
 # Recipe:: default
 #
@@ -90,7 +91,7 @@ package 'nscd' do
 end
 
 service 'sssd' do
-  supports :status => true, :restart => true, :reload => true
+  supports status: true, restart: true, reload: true
   action [:enable, :start]
   provider Chef::Provider::Service::Upstart if node['platform'] == 'ubuntu' && node['platform_version'].to_f >= 13.04
 end
