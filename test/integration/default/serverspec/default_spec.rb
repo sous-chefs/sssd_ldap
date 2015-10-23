@@ -11,7 +11,7 @@ describe package('sssd') do
   it { should be_installed }
 end
 
-if ['debian', 'ubuntu'].include?(os[:family])
+if %w(debian ubuntu).include?(os[:family])
   describe package('libsss-sudo') do
     it { should be_installed }
   end
