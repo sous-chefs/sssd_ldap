@@ -22,3 +22,8 @@ platforms:
 suites:
   - name: default
     run_list: sssd_ldap::default
+    attributes: {
+      sssd_ldap: {
+        ldap_sudo: true
+      }
+    }
