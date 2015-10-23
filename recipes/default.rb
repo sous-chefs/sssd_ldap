@@ -27,7 +27,6 @@ package 'libsss-sudo' do
     'debian' => { '< 8.0' => 'libsss-sudo0' },
     'ubuntu' => { '< 13.04' => 'libsss-sudo0' }
   )
-
   action :install
   only_if { platform_family?('debian') && node['sssd_ldap']['ldap_sudo'] }
 end
