@@ -2,6 +2,14 @@
 
 This file is used to list changes made in each version of sssd_ldap.
 
+## 3.0.0:
+- BREAKING: All config file attributes have been moved into the `node['sssd_ldap']['sssd_conf']` hash.  You can add any key value config items to this by just adding to the hash.
+- Add test kitchen config. Example: `node['sssd_ldap']['sssd_conf']['something'] = true`
+- Update Travis to run unit/lint testing via ChefDK instead of Gems and to run kitchen-docker for integration testing
+- Use the standard Chef rubocop config
+- Update development deps to the latest in the Gemfile
+- Require at least Chef 11
+
 ## 2.0.0:
 - BREAKING: Change default['sssd_ldap']['ldap_tls_cacertdir'] to default['sssd_ldap']['ldap_tls_cacert'] and use per platform value
 - BREAKING: default['sssd_ldap']['ldap_sudo'] is a boolean value now not a string
