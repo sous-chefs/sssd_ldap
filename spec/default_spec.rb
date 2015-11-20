@@ -1,4 +1,4 @@
-require 'chefspec'
+require 'spec_helper'
 
 describe 'sssd_ldap::default ubuntu 12.04' do
   let(:runner) { ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '12.04') }
@@ -47,5 +47,3 @@ describe 'sssd_ldap::default centos' do
     expect(chef_run).to install_package 'authconfig'
   end
 end
-
-at_exit { ChefSpec::Coverage.report! }
