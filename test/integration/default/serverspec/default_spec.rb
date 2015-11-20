@@ -10,7 +10,13 @@ describe package('sssd') do
 end
 
 if %w(debian ubuntu).include?(os[:family])
-  describe package('libsss-sudo') do
-    it { should be_installed }
+  if ( os[:family] == 'ubuntu' && os[:release].to_i <= 12 ) || ( os[:family] == 'debian' && os[:release].to_i <= 7 )
+    describe package('libsss-sudo0') do
+      it { should be_installed }
+    end
+  else
+    describe package('libsss-sudo') do
+      it { should be_installed }
+    end
   end
 end
