@@ -10,5 +10,5 @@ filter_users = root,named,avahi,haldaemon,dbus,radiusd,news,nscd
 
 [domain/LDAP]
 <% node['sssd_ldap']['sssd_conf'].each do |key, value| %>
-<%=  key %> = <%= value %>
-<%end %>
+<% if not value.nil? %><%=  key %> = <%= value %><% end %>
+<% end %>
