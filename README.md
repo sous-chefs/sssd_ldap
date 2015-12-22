@@ -50,6 +50,8 @@ Attribute                                  | Value                              
 `['sssd_conf']['min_id']`                  | `'1'`                                                                          | default, used to ignore lower uid/gid's
 `['sssd_conf']['max_id']`                  | `'0'`                                                                          | default, used to ignore higher uid/gid's
 `['ldap_sudo']`                            | `false`                                                                        | Adds ldap enabled sudoers (true/false)
+`['ldap_ssh']`                             | `false`                                                                        | Adds ldap enabled ssh keys (true/false)
+`['ldap_autofs']`                          | `false`                                                                        | Adds ldap enabled autofs config (true/false)
 
 ## Recipes
 - default: Installs and configures sssd daemon
