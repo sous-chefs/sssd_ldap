@@ -2,11 +2,11 @@ name             'sssd_ldap'
 maintainer       'Tim Smith'
 maintainer_email 'tsmith84@gmail.com'
 license          'Apache 2.0'
-description      'Installs/Configures LDAP on RHEL/Ubuntu using SSSD'
+description      'Sets up SSSD for LDAP on Ubuntu and RHEL systems'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '3'
+version          '3.0.1'
 
-%w( redhat centos amazon scientific oracle ubuntu debian ).each do |os|
+%w(redhat centos amazon scientific oracle ubuntu debian).each do |os|
   supports os
 end
 source_url 'https://github.com/tas50/chef-sssd_ldap' if respond_to?(:source_url)

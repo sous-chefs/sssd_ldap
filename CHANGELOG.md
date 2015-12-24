@@ -1,7 +1,12 @@
 # CHANGELOG for sssd_ldap
 This file is used to list changes made in each version of sssd_ldap.
 
-## 3.0.0:
+## 3.0.1 (2015-12-24):
+- Added 2 new attributes for enabling autofs and ssh support, both of which default to false
+- nil values for config options are now skipped in the config to prevent bad configs from being written out
+- Added test kitchen integration testing in Travis CI
+
+## 3.0.0 (2015-10-22):
 - BREAKING: All config file attributes have been moved into the `node['sssd_ldap']['sssd_conf']` hash.  You can add any key value config items to this by just adding to the hash.
 - Add test kitchen config. Example: `node['sssd_ldap']['sssd_conf']['something'] = true`
 - Update Travis to run unit/lint testing via ChefDK instead of Gems and to run kitchen-docker for integration testing
