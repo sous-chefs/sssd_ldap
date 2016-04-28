@@ -1,25 +1,32 @@
 # sssd_ldap Cookbook
+
 [![Build Status](https://travis-ci.org/tas50/chef-sssd_ldap.svg?branch=master)](https://travis-ci.org/tas50/chef-sssd_ldap) [![Cookbook Version](https://img.shields.io/cookbook/v/sssd_ldap.svg)](https://supermarket.chef.io/cookbooks/sssd_ldap)
 
-This cookbook installs SSSD and configures it for LDAP authentication.  As part of the setup of SSSD it will also remove the NSCD package as NSCD is known to interfere with SSSD ([https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/usingnscd-sssd.html](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/usingnscd-sssd.html)).
+This cookbook installs SSSD and configures it for LDAP authentication. As part of the setup of SSSD it will also remove the NSCD package as NSCD is known to interfere with SSSD (<https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/usingnscd-sssd.html>).
 
 ## Requirements
+
 ### Platforms
+
 - Redhat
 - Centos
 - Amazon
 - Scientific
 - Oracle
 - Ubuntu
+- Debian
 
 ### Chef
+
 - Chef 11+
 
 ### Cookbooks
+
 - none
 
 ## Attributes
-Arbitrary key/value pairs may be added to the `['sssd_conf']` attribute object.  These key/values will be expanded in the domain block of `sssd.conf`.  This allows you to set any SSSD configuration value you want, not just ones provided by the attributes in this cookbook.
+
+Arbitrary key/value pairs may be added to the `['sssd_conf']` attribute object. These key/values will be expanded in the domain block of `sssd.conf`. This allows you to set any SSSD configuration value you want, not just ones provided by the attributes in this cookbook.
 
 Attribute                                  | Value                                                                          | Comment
 ------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------
@@ -54,9 +61,11 @@ Attribute                                  | Value                              
 `['ldap_autofs']`                          | `false`                                                                        | Adds ldap enabled autofs config (true/false)
 
 ## Recipes
+
 - default: Installs and configures sssd daemon
 
 ## CA Certificates
+
 If you manage your own CA then the easiest way to inject the certificate for system-wide use is as follows:
 
 ### RHEL
@@ -75,6 +84,7 @@ update-ca-certificates
 ```
 
 ## License & Authors
+
 **Author:** Tim Smith - ([tsmith84@gmail.com](mailto:tsmith84@gmail.com))
 
 **Copyright:** 2013-2015, Limelight Networks, Inc.
