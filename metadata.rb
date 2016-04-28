@@ -4,7 +4,7 @@ maintainer_email 'tsmith84@gmail.com'
 license          'Apache 2.0'
 description      'Sets up SSSD for LDAP on Ubuntu and RHEL systems'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '3.0.1'
+version          '3.1.0'
 
 %w(redhat centos amazon scientific oracle ubuntu debian).each do |os|
   supports os
