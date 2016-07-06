@@ -36,6 +36,7 @@ Attribute                                  | Value                              
 `['sssd_conf']['sudo_provider']`           | `'ldap'`                                                                       |
 `['sssd_conf']['enumerate']`               | `'true'`                                                                       |
 `['sssd_conf']['cache_credentials']`       | `'false'`                                                                      |
+`['sssd_conf']['filter_users']`            | `'root'`                                                                       |
 `['sssd_conf']['ldap_schema']`             | `'rfc2307bis'`                                                                 |
 `['sssd_conf']['ldap_uri']`                | `'ldap://something.yourcompany.com'`                                           |
 `['sssd_conf']['ldap_search_base']`        | `'dc=yourcompany,dc=com'`                                                      |

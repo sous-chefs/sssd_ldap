@@ -23,6 +23,7 @@ default['sssd_ldap']['sssd_conf']['chpass_provider'] = 'ldap'
 default['sssd_ldap']['sssd_conf']['sudo_provider'] = 'ldap'
 default['sssd_ldap']['sssd_conf']['enumerate'] = 'true'
 default['sssd_ldap']['sssd_conf']['cache_credentials'] = 'false'
+default['sssd_ldap']['sssd_conf']['filter_users'] = 'root'
 
 default['sssd_ldap']['sssd_conf']['ldap_schema'] = 'rfc2307bis'
 default['sssd_ldap']['sssd_conf']['ldap_uri'] = 'ldap://something.yourcompany.com'
