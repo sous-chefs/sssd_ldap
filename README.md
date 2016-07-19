@@ -1,6 +1,6 @@
 # sssd_ldap Cookbook
 
-[![Build Status](https://travis-ci.org/tas50/chef-sssd_ldap.svg?branch=master)](https://travis-ci.org/tas50/chef-sssd_ldap) [![Cookbook Version](https://img.shields.io/cookbook/v/sssd_ldap.svg)](https://supermarket.chef.io/cookbooks/sssd_ldap)
+[![Build Status](https://travis-ci.org/chef-cookbook/chef-sssd_ldap.svg?branch=master)](https://travis-ci.org/chef-cookbook/chef-sssd_ldap) [![Cookbook Version](https://img.shields.io/cookbook/v/sssd_ldap.svg)](https://supermarket.chef.io/cookbooks/sssd_ldap)
 
 This cookbook installs SSSD and configures it for LDAP authentication. As part of the setup of SSSD it will also remove the NSCD package as NSCD is known to interfere with SSSD (<https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/usingnscd-sssd.html>).
 
@@ -18,7 +18,7 @@ This cookbook installs SSSD and configures it for LDAP authentication. As part o
 
 ### Chef
 
-- Chef 11+
+- Chef 12+
 
 ### Cookbooks
 
@@ -85,9 +85,10 @@ update-ca-certificates
 
 ## License & Authors
 
-**Author:** Tim Smith - ([tsmith84@gmail.com](mailto:tsmith84@gmail.com))
+- Author: Tim Smith ([tsmith@chef.io](mailto:tsmith@chef.io))
 
-**Copyright:** 2013-2015, Limelight Networks, Inc.
+- Copyright: 2013-2015, Limelight Networks, Inc.
+- Copyright: 2016, Chef Software, Inc.
 
 ```text
 Licensed under the Apache License, Version 2.0 (the "License");
