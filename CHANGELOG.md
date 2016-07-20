@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of sssd_ldap.
 
+## 4.0.0 (2016-07-19)
+
+- Transferred cookbook ownership to Chef
+- Added chef_version metadata
+- Updated the minimum supported Chef version to 12.0
+- Switched linting to Cookstyle and added a Rakefile for simplified testing
+
 ## 3.1.0 (2016-04-27)
 
 - Added back support for RHEL 5 by making sure not to enable the sudo service on RHEL < 6 as the package is too old
