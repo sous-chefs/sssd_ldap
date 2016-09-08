@@ -5,7 +5,7 @@ describe 'sssd_ldap::default ubuntu 12.04' do
   let(:chef_run) { runner.converge('sssd_ldap::default') }
 
   it 'installs libsss-sudo0 if sudo_ldap attribute set' do
-    chef_run.node.set['sssd_ldap']['ldap_sudo'] = true
+    chef_run.node.normal['sssd_ldap']['ldap_sudo'] = true
     chef_run.converge('sssd_ldap::default')
     expect(chef_run).to install_package 'libsss-sudo0'
   end
@@ -29,7 +29,7 @@ describe 'sssd_ldap::default ubuntu 14.04' do
   end
 
   it 'installs libsss-sudo if ldap_sudo attribute set' do
-    chef_run.node.set['sssd_ldap']['ldap_sudo'] = true
+    chef_run.node.normal['sssd_ldap']['ldap_sudo'] = true
     chef_run.converge('sssd_ldap::default')
     expect(chef_run).to install_package 'libsss-sudo'
   end
