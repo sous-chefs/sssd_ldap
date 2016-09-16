@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of sssd_ldap.
 
+## 4.1.0 (2016-09-15)
+- Remove chef 11 compat in the metadata
+- Require Chef 12.1
+- attributized filter_users and filter_groups configuration options; fixes #11
+
 ## 4.0.0 (2016-07-19)
 
 - Transferred cookbook ownership to Chef
