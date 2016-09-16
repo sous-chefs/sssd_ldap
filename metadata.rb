@@ -12,4 +12,4 @@ end
 source_url 'https://github.com/chef-cookbooks/chef-sssd_ldap'
 issues_url 'https://github.com/chef-cookbooks/chef-sssd_ldap/issues'
 
-chef_version '>= 12.0'
+chef_version '>= 12.1'
