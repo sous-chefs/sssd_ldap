@@ -7,8 +7,11 @@ domains = LDAP
 <% end %>
 
 [nss]
-filter_users = <%= node['sssd_ldap']['filter_users'].join(',') %>
-filter_groups = <% if not node['sssd_ldap']['filter_groups'].nil? %><%= node['sssd_ldap']['filter_groups'].join(',') %><% end %>
+<% node['sssd_ldap']['nss_service_conf'].each do |key, value| %>
+<% if not value.nil? %><%= key %> = <%= value %><% end %>
+<% end %>
+filter_users = <%= node['sssd_ldap']['nss_conf']['filter_users'].join(',') %>
+filter_groups = <% if not node['sssd_ldap']['nss_conf']['filter_groups'].nil? %><%= node['sssd_ldap']['filter_groups'].join(',') %><% end %>
 
 [pam]
 
