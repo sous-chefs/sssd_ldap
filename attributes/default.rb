@@ -17,8 +17,10 @@
 # limitations under the License.
 #
 
-default['sssd_ldap']['filter_users'] = %w(root named avahi haldaemon dbus radiusd news nscd)
-default['sssd_ldap']['filter_groups'] = []
+default['sssd_ldap']['nss_conf']['filter_users'] = 'root,named,avahi,haldaemon,dbus,radiusd,news,nscd'
+default['sssd_ldap']['nss_conf']['filter_groups'] = nil
+default['sssd_ldap']['nss_conf']['override_homedir'] = nil
+default['sssd_ldap']['nss_conf']['override_shell'] = nil
 default['sssd_ldap']['sssd_conf']['id_provider'] = 'ldap'
 default['sssd_ldap']['sssd_conf']['auth_provider'] = 'ldap'
 default['sssd_ldap']['sssd_conf']['chpass_provider'] = 'ldap'
@@ -57,6 +59,3 @@ default['sssd_ldap']['sssd_conf']['max_id'] = '0'
 default['sssd_ldap']['ldap_sudo'] = false
 default['sssd_ldap']['ldap_autofs'] = false
 default['sssd_ldap']['ldap_ssh'] = false
-
-default['sssd_ldap']['sssd_service_conf']['override_homedir'] = nil
-default['sssd_ldap']['sssd_service_conf']['override_shell'] = nil
