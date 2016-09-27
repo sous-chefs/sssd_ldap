@@ -57,3 +57,6 @@ default['sssd_ldap']['sssd_conf']['max_id'] = '0'
 default['sssd_ldap']['ldap_sudo'] = false
 default['sssd_ldap']['ldap_autofs'] = false
 default['sssd_ldap']['ldap_ssh'] = false
+
+default['sssd_ldap']['sssd_service_conf']['override_homedir'] = nil
+default['sssd_ldap']['sssd_service_conf']['override_shell'] = nil
