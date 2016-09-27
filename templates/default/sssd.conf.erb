@@ -8,7 +8,7 @@ domains = LDAP
 
 [nss]
 filter_users = <%= node['sssd_ldap']['filter_users'].join(',') %>
-filter_groups = <% if not node['sssd_ldap']['filter_groups'].empty? %><%= node['sssd_ldap']['filter_groups'].join(',') %><% end %>
+filter_groups = <% if not node['sssd_ldap']['filter_groups'].nil? %><%= node['sssd_ldap']['filter_groups'].join(',') %><% end %>
 
 [pam]
 
