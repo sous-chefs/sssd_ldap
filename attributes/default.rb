@@ -22,7 +22,7 @@ default['sssd_ldap']['nss_conf']['filter_groups'] = nil
 default['sssd_ldap']['nss_conf']['override_homedir'] = nil
 default['sssd_ldap']['nss_conf']['override_shell'] = nil
 
-default['sssd_ldap']['sssd_service_conf'] = nil
+default['sssd_ldap']['sssd_service_conf'] = {}
 
 default['sssd_ldap']['sssd_conf']['id_provider'] = 'ldap'
 default['sssd_ldap']['sssd_conf']['auth_provider'] = 'ldap'
