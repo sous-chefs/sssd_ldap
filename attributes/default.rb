@@ -19,9 +19,6 @@
 
 # Attributes that relate to [nss] section
 default['sssd_ldap']['nss_service_conf']['filter_users'] = 'root,named,avahi,haldaemon,dbus,radiusd,news,nscd'
-default['sssd_ldap']['nss_service_conf']['filter_groups'] = nil
-default['sssd_ldap']['nss_service_conf']['override_homedir'] = nil
-default['sssd_ldap']['nss_service_conf']['override_shell'] = nil
 
 default['sssd_ldap']['sssd_conf']['id_provider'] = 'ldap'
 default['sssd_ldap']['sssd_conf']['auth_provider'] = 'ldap'
@@ -36,8 +33,6 @@ default['sssd_ldap']['sssd_conf']['ldap_search_base'] = 'dc=yourcompany,dc=com'
 default['sssd_ldap']['sssd_conf']['ldap_user_search_base'] = 'ou=People,dc=yourcompany,dc=com'
 default['sssd_ldap']['sssd_conf']['ldap_user_object_class'] = 'posixAccount'
 default['sssd_ldap']['sssd_conf']['ldap_user_name'] = 'uid'
-default['sssd_ldap']['sssd_conf']['override_homedir'] = nil
-default['sssd_ldap']['sssd_conf']['shell_fallback'] = '/bin/bash'
 
 default['sssd_ldap']['sssd_conf']['ldap_group_search_base'] = 'ou=Groups,dc=yourcompany,dc=com'
 default['sssd_ldap']['sssd_conf']['ldap_group_object_class'] = 'posixGroup'
