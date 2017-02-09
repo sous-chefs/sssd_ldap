@@ -75,6 +75,7 @@ template '/etc/sssd/sssd.conf' do
   owner 'root'
   group 'root'
   mode '0600'
+  sensitive node['sssd_ldap']['sssd_conf_sensitive']
 
   if platform_family?('rhel')
     # this needs to run immediately so it doesn't happen after sssd
