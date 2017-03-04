@@ -4,12 +4,22 @@ services = nss, pam<% if node['sssd_ldap']['ldap_autofs'] %>, autofs<% end %><% 
 domains = LDAP
 
 [nss]
-filter_users = <%= node['sssd_ldap']['filter_users'].join(',') %>
-filter_groups = <%= node['sssd_ldap']['filter_groups'].join(',') %>
-
-[pam]
+<%
+  node['sssd_ldap']['nss_service_conf'].each do |key, value|
+    if not value.nil?
+%>
+<%= key %> = <%= value %>
+<%
+    end
+  end
+%>
 
 [domain/LDAP]
-<% node['sssd_ldap']['sssd_conf'].each do |key, value| %>
-<% if not value.nil? %><%=  key %> = <%= value %><% end %>
-<% end %>
+<% node['sssd_ldap']['sssd_conf'].each do |key, value|
+    if not value.nil?
+%>
+<%= key %> = <%= value %>
+<%
+    end
+  end
+%>
