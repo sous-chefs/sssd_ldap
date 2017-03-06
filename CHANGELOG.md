@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of sssd_ldap.
 
+## 4.1.1 (2017-03-06)
+
+- Allow the user to ensure that sensitive resource data is not logged by the chef-client. Default value: false.
+- Test with Local Delivery instead of Rake
+
 ## 4.1.0 (2016-09-15)
 - Remove chef 11 compat in the metadata
 - Require Chef 12.1
