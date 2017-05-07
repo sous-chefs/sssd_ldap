@@ -73,7 +73,7 @@ end
 template '/etc/sssd/sssd.conf' do
   source 'sssd.conf.erb'
   owner 'root'
-  group 'root'
+  group node['root_group']
   mode '0600'
   sensitive node['sssd_ldap']['sssd_conf_sensitive']
 
