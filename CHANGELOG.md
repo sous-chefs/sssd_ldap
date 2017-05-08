@@ -2,12 +2,18 @@
 
 This file is used to list changes made in each version of sssd_ldap.
 
+## 4.1.2 (2017-05-08)
+
+- Update apache2 license string to be a SPDX standard string
+- Replaced hard coded root group with ohai root_group attribute to fix FreeBSD
+
 ## 4.1.1 (2017-03-06)
 
 - Allow the user to ensure that sensitive resource data is not logged by the chef-client. Default value: false.
 - Test with Local Delivery instead of Rake
 
 ## 4.1.0 (2016-09-15)
+
 - Remove chef 11 compat in the metadata
 - Require Chef 12.1
 - attributized filter_users and filter_groups configuration options; fixes #11
