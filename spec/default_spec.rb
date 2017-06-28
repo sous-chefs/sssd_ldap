@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'sssd_ldap::default ubuntu 12.04' do
-  let(:runner) { ChefSpec::ServerRunner.new(platform: 'ubuntu', version: '12.04') }
+  let(:runner) { ChefSpec::ServerRunner.new(platform: 'ubuntu', version: '16.04') }
   let(:chef_run) { runner.converge('sssd_ldap::default') }
 
   it 'installs libsss-sudo0 if sudo_ldap attribute set' do
@@ -40,7 +40,7 @@ describe 'sssd_ldap::default ubuntu 14.04' do
 end
 
 describe 'sssd_ldap::default centos' do
-  let(:runner) { ChefSpec::SoloRunner.new(platform: 'centos', version: '6.6') }
+  let(:runner) { ChefSpec::SoloRunner.new(platform: 'centos', version: '6.8') }
   let(:chef_run) { runner.converge('sssd_ldap::default') }
 
   it 'installs authconfig' do
