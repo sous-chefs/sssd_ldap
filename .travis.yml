@@ -21,6 +21,8 @@ env:
   matrix:
   - INSTANCE=default-ubuntu-1404
   - INSTANCE=default-ubuntu-1604
+  - INSTANCE=default-amazon-2017-03
+  - INSTANCE=default-amazon-2016-09
   - INSTANCE=default-debian-8
   - INSTANCE=default-centos-6
   - INSTANCE=default-centos-7
