@@ -34,7 +34,7 @@ package 'libsss-sudo' do
 end
 
 # Only run on RHEL
-if platform_family?('rhel')
+if platform_family?('rhel', 'amazon')
 
   # authconfig allows cli based intelligent manipulation of the pam.d files
   package 'authconfig' do
@@ -77,7 +77,7 @@ template '/etc/sssd/sssd.conf' do
   mode '0600'
   sensitive node['sssd_ldap']['sssd_conf_sensitive']
 
-  if platform_family?('rhel')
+  if platform_family?('rhel', 'amazon')
     # this needs to run immediately so it doesn't happen after sssd
     # service block below, or sssd won't start when recipe completes
     notifies :run, 'execute[authconfig]', :immediately

@@ -30,6 +30,22 @@ platforms:
       - RUN /usr/bin/apt-get update
       - RUN /usr/bin/apt-get install apt-transport-https lsb-release procps net-tools -y
 
+- name: amazon-2017-03
+  driver:
+    image: amazonlinux:2017.03
+    platform: rhel
+    pid_one_command: /sbin/init
+    intermediate_instructions:
+      - RUN yum -y install lsof which initscripts net-tools wget net-tools
+
+- name: amazon-2016-09
+  driver:
+    image: amazonlinux:2016.09
+    platform: rhel
+    pid_one_command: /sbin/init
+    intermediate_instructions:
+      - RUN yum -y install lsof which initscripts net-tools wget net-tools
+
 - name: centos-6
   driver:
     image: centos:6

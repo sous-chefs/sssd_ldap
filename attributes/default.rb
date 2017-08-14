@@ -42,7 +42,7 @@ default['sssd_ldap']['sssd_conf']['ldap_group_name'] = 'cn'
 
 default['sssd_ldap']['sssd_conf']['ldap_id_use_start_tls'] = 'true'
 default['sssd_ldap']['sssd_conf']['ldap_tls_reqcert'] = 'never'
-default['sssd_ldap']['sssd_conf']['ldap_tls_cacert'] = value_for_platform_family('rhel' => '/etc/pki/tls/certs/ca-bundle.crt', 'default' => '/etc/ssl/certs/ca-certificates.crt')
+default['sssd_ldap']['sssd_conf']['ldap_tls_cacert'] = value_for_platform_family('rhel' => '/etc/pki/tls/certs/ca-bundle.crt', 'amazon' => '/etc/pki/tls/certs/ca-bundle.crt', 'default' => '/etc/ssl/certs/ca-certificates.crt')
 
 # if you have a domain that doesn't require binding set these two attributes to nil
 default['sssd_ldap']['sssd_conf']['ldap_default_bind_dn'] = 'cn=bindaccount,dc=yourcompany,dc=com'
