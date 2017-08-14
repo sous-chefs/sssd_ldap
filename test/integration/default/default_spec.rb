@@ -7,6 +7,8 @@ describe package('sssd') do
   it { should be_installed }
 end
 
-describe package('libsss-sudo') do
-  it { should be_installed }
+if %w(debian ubuntu).include?(os[:family])
+  describe package('libsss-sudo') do
+    it { should be_installed }
+  end
 end
