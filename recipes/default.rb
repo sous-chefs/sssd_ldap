@@ -25,7 +25,6 @@ end
 package 'libsss-sudo' do
   package_name value_for_platform(
     'debian' => { '< 8.0' => 'libsss-sudo0' },
-    'ubuntu' => { '< 13.04' => 'libsss-sudo0' },
     'default' => 'libsss-sudo'
 
   )

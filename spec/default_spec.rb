@@ -1,5 +1,15 @@
 require 'spec_helper'
 
+describe 'sssd_ldap::default debian 7' do
+  let(:runner) { ChefSpec::SoloRunner.new(platform: 'debian', version: '7.11') }
+  let(:chef_run) { runner.converge('sssd_ldap::default') }
+
+  it 'installs libsss-sudo0 if ldap_sudo attribute set' do
+    chef_run.node.override['sssd_ldap']['ldap_sudo'] = true
+    chef_run.converge('sssd_ldap::default')
+    expect(chef_run).to install_package 'libsss-sudo0'
+  end
+end
 describe 'sssd_ldap::default ubuntu 16.04' do
   let(:runner) { ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '16.04') }
   let(:chef_run) { runner.converge('sssd_ldap::default') }
