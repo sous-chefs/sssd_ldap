@@ -2,6 +2,14 @@
 
 This file is used to list changes made in each version of sssd_ldap.
 
+## 4.2.0 (2017-08-13)
+
+- [GH-32] - Support for amazon platform family
+- Remove Ubuntu 12.04 support and testing as 12.04 is EOL
+- Convert integration tests from ServerSpec to InSpec
+- Move the template out the default dir since we require Chef 12
+- Switch to dokken images for Travis testing and add Debian 7 / Debian 9 testing
+
 ## 4.1.2 (2017-05-08)
 
 - Update apache2 license string to be a SPDX standard string
