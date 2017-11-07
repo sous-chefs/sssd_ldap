@@ -9,6 +9,6 @@ version          '4.2.0'
 %w(redhat centos amazon scientific oracle ubuntu debian).each do |os|
   supports os
 end
-source_url 'https://github.com/chef-cookbooks/chef-sssd_ldap'
-issues_url 'https://github.com/chef-cookbooks/chef-sssd_ldap/issues'
+source_url 'https://github.com/chef-cookbooks/sssd_ldap'
+issues_url 'https://github.com/chef-cookbooks/sssd_ldap/issues'
 chef_version '>= 12.1' if respond_to?(:chef_version)
