@@ -2,6 +2,12 @@
 
 This file is used to list changes made in each version of sssd_ldap.
 
+## 4.2.1 (2017-11-06)
+
+- Fix the URL in the issues_url and source_url metadata
+- Add Chef 12 testing to Travis CI
+- Remove broken shell_fallback functionality which resulted in log warnings
+
 ## 4.2.0 (2017-08-13)
 
 - [GH-32] - Support for amazon platform family
