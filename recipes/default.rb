@@ -1,5 +1,5 @@
 #
-# Author:: Tim Smith(<tsmith84@gmail.com>)
+# Author:: Tim Smith(<tsmith@chef.io>)
 # Cookbook:: sssd_ldap
 # Recipe:: default
 #
