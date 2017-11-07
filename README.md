@@ -43,7 +43,6 @@ Attribute                                  | Value                              
 `['sssd_conf']['ldap_user_object_class']`  | `'posixAccount'`                                                               |
 `['sssd_conf']['ldap_user_name']`          | `'uid'`                                                                        |
 `['sssd_conf']['override_homedir']`        | `nil`                                                                          |
-`['sssd_conf']['shell_fallback']`          | `'/bin/bash'`                                                                  |
 `['sssd_conf']['ldap_group_search_base']`  | `'ou=Groups,dc=yourcompany,dc=com'`                                            |
 `['sssd_conf']['ldap_group_object_class']` | `'posixGroup'`                                                                 |
 `['sssd_conf']['ldap_id_use_start_tls']`   | `'true'`                                                                       |
