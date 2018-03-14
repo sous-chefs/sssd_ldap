@@ -18,6 +18,12 @@
 # limitations under the License.
 #
 
+# NSCD and SSSD don't play well together.
+# https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/usingnscd-sssd.html
+package 'nscd' do
+  action :remove
+end
+
 package 'sssd' do
   action :install
 end
@@ -83,12 +89,6 @@ template '/etc/sssd/sssd.conf' do
   end
 
   notifies :restart, 'service[sssd]'
-end
-
-# NSCD and SSSD don't play well together.
-# https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/usingnscd-sssd.html
-package 'nscd' do
-  action :remove
 end
 
 service 'sssd' do
