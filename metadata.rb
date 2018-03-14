@@ -4,7 +4,7 @@ maintainer_email 'cookbooks@chef.io'
 license          'Apache-2.0'
 description      'Sets up SSSD for LDAP on Ubuntu and RHEL systems'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '4.2.1'
+version          '4.2.2'
 
 %w(redhat centos amazon scientific oracle ubuntu debian).each do |os|
   supports os

@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of sssd_ldap.
 
+## 4.2.2 (2018-03-13)
+
+- If nscd is installed when authconfig is run, it will prepend to /etc/sssd/sssd.conf so make sure we remove it before sssd is installed not after
+
 ## 4.2.1 (2017-11-06)
 
 - Fix the URL in the issues_url and source_url metadata
