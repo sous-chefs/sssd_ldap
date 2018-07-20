@@ -57,3 +57,7 @@ default['sssd_ldap']['sssd_conf']['max_id'] = '0'
 default['sssd_ldap']['ldap_sudo'] = false
 default['sssd_ldap']['ldap_autofs'] = false
 default['sssd_ldap']['ldap_ssh'] = false
+
+# If you need nscd to stay installed set this to false.
+# See https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/usingnscd-sssd.html
+default['sssd_ldap']['uninstall_nscd'] = true
