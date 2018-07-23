@@ -58,6 +58,7 @@ Attribute                                  | Value                              
 `['ldap_sudo']`                            | `false`                                                                        | Adds ldap enabled sudoers (true/false)
 `['ldap_ssh']`                             | `false`                                                                        | Adds ldap enabled ssh keys (true/false)
 `['ldap_autofs']`                          | `false`                                                                        | Adds ldap enabled autofs config (true/false)
+`['uninstall_nscd']`                       | `true`                                                                         | Allows configuration to not uninstall nscd package if required
 
 ## Recipes
 

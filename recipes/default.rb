@@ -22,6 +22,7 @@
 # https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/usingnscd-sssd.html
 package 'nscd' do
   action :remove
+  only_if { node['sssd_ldap']['uninstall_nscd'] }
 end
 
 package 'sssd' do
