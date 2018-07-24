@@ -68,7 +68,7 @@ if platform_family?('rhel', 'amazon')
 
   # Have authconfig enable SSSD in the pam files
   execute 'authconfig' do
-    command "authconfig #{node['sssd_ldap']['authconfig_params']}"
+    command "/usr/sbin/authconfig #{node['sssd_ldap']['authconfig_params']}"
     notifies :run, 'ruby_block[nsswitch sudoers]', :immediately
     action :nothing
   end
