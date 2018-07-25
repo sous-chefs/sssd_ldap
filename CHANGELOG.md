@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of sssd_ldap.
 
+## 4.2.5 (2018-07-25)
+
+- Give full path to authconfig to avoid /sbin not being in the path
+
 ## 4.2.3 (2018-07-23)
 
 - Allow option to keep nscd installed where found
