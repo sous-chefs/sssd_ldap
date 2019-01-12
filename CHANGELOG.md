@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of sssd_ldap.
 
+## 5.0.09 (2019-01-11)
+
+- Require Chef 13+ and remove Debian 7 support
+
 ## 4.2.5 (2018-07-25)
 
 - Give full path to authconfig to avoid /sbin not being in the path
