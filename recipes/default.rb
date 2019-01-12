@@ -3,6 +3,7 @@
 # Cookbook:: sssd_ldap
 # Recipe:: default
 #
+# Copyright:: 2018-2019, Chef Software, Inc.
 # Copyright:: 2013-2017, Limelight Networks, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,10 +31,6 @@ package 'sssd' do
 end
 
 package 'libsss-sudo' do
-  package_name value_for_platform(
-    'debian' => { '< 8.0' => 'libsss-sudo0' },
-    'default' => 'libsss-sudo'
-  )
   action :install
   only_if { platform_family?('debian') && node['sssd_ldap']['ldap_sudo'] }
 end

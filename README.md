@@ -18,7 +18,7 @@ This cookbook installs SSSD and configures it for LDAP authentication. As part o
 
 ### Chef
 
-- Chef 12.1+
+- Chef 13+
 
 ### Cookbooks
 
