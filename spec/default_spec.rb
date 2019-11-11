@@ -18,7 +18,7 @@ describe 'sssd_ldap::default ubuntu 16.04' do
   end
 
   it 'installs libsss-sudo if ldap_sudo attribute set' do
-    chef_run.node.normal['sssd_ldap']['ldap_sudo'] = true
+    chef_run.node.override['sssd_ldap']['ldap_sudo'] = true
     chef_run.converge('sssd_ldap::default')
     expect(chef_run).to install_package 'libsss-sudo'
   end
