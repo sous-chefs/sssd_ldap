@@ -29,7 +29,7 @@ describe 'sssd_ldap::default ubuntu 16.04' do
 end
 
 describe 'sssd_ldap::default centos 6' do
-  let(:runner) { ChefSpec::SoloRunner.new(platform: 'centos', version: '6.9') }
+  let(:runner) { ChefSpec::SoloRunner.new(platform: 'centos', version: '6') }
   let(:chef_run) { runner.converge('sssd_ldap::default') }
 
   it 'installs authconfig' do
