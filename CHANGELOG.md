@@ -4,6 +4,7 @@ This file is used to list changes made in each version of sssd_ldap.
 
 ## Unreleased
 
+- Sous Chefs Adoption
 - resolved cookstyle error: spec/default_spec.rb:32:18 warning: `ChefDeprecations/DeprecatedChefSpecPlatform`
 
 ## 5.0.09 (2019-01-11)
