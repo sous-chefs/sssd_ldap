@@ -1,4 +1,4 @@
-name             'sssd_ldap'
+name 'sssd_ldap'
 maintainer        'Sous Chefs'
 maintainer_email  'help@sous-chefs.org'
 license          'Apache-2.0'
