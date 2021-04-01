@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe 'sssd_ldap::default ubuntu 16.04' do
-  let(:runner) { ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '16.04') }
+describe 'sssd_ldap::default ubuntu 20.04' do
+  let(:runner) { ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '20.04') }
   let(:chef_run) { runner.converge('sssd_ldap::default') }
 
   it 'installs sssd' do
