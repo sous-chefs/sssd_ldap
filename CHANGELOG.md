@@ -2,7 +2,7 @@
 
 This file is used to list changes made in each version of sssd_ldap.
 
-## Unreleased
+## 5.1.0 - *2021-04-01*
 
 - Sous Chefs Adoption
 - Cookstyle Fixes
