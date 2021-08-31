@@ -4,7 +4,11 @@ This file is used to list changes made in each version of sssd_ldap.
 
 ## Unreleased
 
+- Standardise files with files in sous-chefs/repo-management
+
 ## 5.1.1 - *2021-06-01*
+
+- Standardise files with files in sous-chefs/repo-management
 
 ## 5.1.0 - *2021-04-01*
 
