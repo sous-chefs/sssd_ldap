@@ -30,6 +30,11 @@ package 'sssd' do
   action :install
 end
 
+package 'sssd-ldap' do
+  action :install
+  only_if { platform_family?('suse') }
+end
+
 package 'libsss-sudo' do
   action :install
   only_if { platform_family?('debian') && node['sssd_ldap']['ldap_sudo'] }
