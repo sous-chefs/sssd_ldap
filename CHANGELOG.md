@@ -5,6 +5,7 @@ This file is used to list changes made in each version of sssd_ldap.
 ## Unreleased
 
 - Add sssd-ldap package installation for Suse distros
+- Remove delivery and move to calling RSpec directly via a reusable workflow
 
 ## 5.1.2 - *2021-08-31*
 
