@@ -4,6 +4,8 @@ This file is used to list changes made in each version of sssd_ldap.
 
 ## Unreleased
 
+Standardise files with files in sous-chefs/repo-management
+
 ## 5.2.0 - *2022-02-04*
 
 - Add sssd-ldap package installation for Suse distros
