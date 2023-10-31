@@ -2,7 +2,7 @@
 
 This file is used to list changes made in each version of sssd_ldap.
 
-## Unreleased
+## 5.2.6 - *2023-10-31*
 
 ## 5.2.5 - *2023-09-28*
 
