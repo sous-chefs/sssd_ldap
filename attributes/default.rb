@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-default['sssd_ldap']['sssd_conf_sensitive'] = false
+default['sssd_ldap']['sssd_conf_sensitive'] = true
 default['sssd_ldap']['filter_users'] = %w(root named avahi haldaemon dbus radiusd news nscd)
 default['sssd_ldap']['filter_groups'] = []
 default['sssd_ldap']['sssd_conf']['id_provider'] = 'ldap'
