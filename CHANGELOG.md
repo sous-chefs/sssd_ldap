@@ -2,6 +2,8 @@
 
 This file is used to list changes made in each version of sssd_ldap.
 
+## Unreleased
+
 ## 5.2.7 - *2024-05-02*
 
 Updated sssd.conf template to be sensitive by default
