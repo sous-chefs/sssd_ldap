@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of sssd_ldap.
 
+## [5.2.10](https://github.com/sous-chefs/sssd_ldap/compare/5.2.9...v5.2.10) (2025-10-16)
+
+
+### Bug Fixes
+
+* **ci:** Update workflows to use release pipeline ([#75](https://github.com/sous-chefs/sssd_ldap/issues/75)) ([a5bbe42](https://github.com/sous-chefs/sssd_ldap/commit/a5bbe42f87111c65ecb6e6a3bb17628db17c7978))
+
 ## 5.2.7 - *2024-05-02*
 
 Updated sssd.conf template to be sensitive by default
