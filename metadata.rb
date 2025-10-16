@@ -3,7 +3,7 @@ maintainer        'Sous Chefs'
 maintainer_email  'help@sous-chefs.org'
 license          'Apache-2.0'
 description      'Sets up SSSD for LDAP on Ubuntu and RHEL systems'
-version          '5.2.9'
+version          '5.2.10'
 source_url        'https://github.com/sous-chefs/sssd_ldap'
 issues_url        'https://github.com/sous-chefs/sssd_ldap/issues'
 
