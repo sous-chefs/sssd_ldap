@@ -6,67 +6,39 @@
 [![OpenCollective](https://opencollective.com/sous-chefs/sponsors/badge.svg)](#sponsors)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 
-This cookbook installs SSSD and configures it for LDAP authentication. As part of the setup of SSSD it will also remove the NSCD package as NSCD is known to interfere with SSSD (<https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/usingnscd-sssd.html>).
+This cookbook provides an `sssd_ldap` custom resource that installs SSSD and configures LDAP authentication. As part of the setup it can also remove the NSCD package as NSCD is known to interfere with SSSD (<https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/usingnscd-sssd.html>).
 
 ## Requirements
 
 ### Platforms
 
-- Redhat
-- Centos
-- Amazon
-- Scientific
-- Oracle
-- Ubuntu
-- Debian
+- AlmaLinux 8+
+- Amazon Linux 2023+
+- CentOS Stream 9+
+- Debian 11+
+- Fedora
+- Oracle Linux 8+
+- Red Hat Enterprise Linux 8+
+- Rocky Linux 8+
+- Ubuntu 22.04+
 
 ### Chef
 
-- Chef 13+
+- Chef 15.3+
 
 ### Cookbooks
 
 - none
 
-## Attributes
+## Resources
 
-Arbitrary key/value pairs may be added to the `['sssd_conf']` attribute object. These key/values will be expanded in the domain block of `sssd.conf`. This allows you to set any SSSD configuration value you want, not just ones provided by the attributes in this cookbook.
+Arbitrary key/value pairs may be added to the `sssd_conf` property hash. These key/values will be expanded in the domain block of `sssd.conf`. This allows you to set any SSSD configuration value you want, not just ones provided by the default property value.
 
-Attribute                                  | Value                                                                          | Comment
------------------------------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------
-`['sssd_conf']['id_provider']`             | `'ldap'`                                                                       |
-`['sssd_conf']['auth_provider']`           | `'ldap'`                                                                       |
-`['sssd_conf']['chpass_provider']`         | `'ldap'`                                                                       |
-`['sssd_conf']['sudo_provider']`           | `'ldap'`                                                                       |
-`['sssd_conf']['enumerate']`               | `'true'`                                                                       |
-`['sssd_conf']['cache_credentials']`       | `'false'`                                                                      |
-`['sssd_conf']['ldap_schema']`             | `'rfc2307bis'`                                                                 |
-`['sssd_conf']['ldap_uri']`                | `'ldap://something.yourcompany.com'`                                           |
-`['sssd_conf']['ldap_search_base']`        | `'dc=yourcompany,dc=com'`                                                      |
-`['sssd_conf']['ldap_user_search_base']`   | `'ou=People,dc=yourcompany,dc=com'`                                            |
-`['sssd_conf']['ldap_user_object_class']`  | `'posixAccount'`                                                               |
-`['sssd_conf']['ldap_user_name']`          | `'uid'`                                                                        |
-`['sssd_conf']['override_homedir']`        | `nil`                                                                          |
-`['sssd_conf']['ldap_group_search_base']`  | `'ou=Groups,dc=yourcompany,dc=com'`                                            |
-`['sssd_conf']['ldap_group_object_class']` | `'posixGroup'`                                                                 |
-`['sssd_conf']['ldap_id_use_start_tls']`   | `'true'`                                                                       |
-`['sssd_conf']['ldap_tls_reqcert']`        | `'never'`                                                                      |
-`['sssd_conf']['ldap_tls_cacert']`         | `'/etc/pki/tls/certs/ca-bundle.crt'` or `'/etc/ssl/certs/ca-certificates.crt'` | defaults for RHEL and others respectively
-`['sssd_conf']['ldap_default_bind_dn']`    | `'cn=bindaccount,dc=yourcompany,dc=com'`                                       | if you have a domain that doesn't require binding set this attributes to nil
-`['sssd_conf']['ldap_default_authtok']`    | `'bind_password'`                                                              | if you have a domain that doesn't require binding set this to nil
-`['authconfig_params']`                    | `'--enablesssd --enablesssdauth --enablelocauthorize --update'`                |
-`['sssd_conf']['access_provider']`         | `nil`                                                                          | Should be set to `'ldap'`
-`['sssd_conf']['ldap_access_filter']`      | `nil`                                                                          | Can use simple LDAP filter such as `'uid=abc123'` or more expressive LDAP filters like `'(&(objectClass=employee)(department=ITSupport))'`
-`['sssd_conf']['min_id']`                  | `'1'`                                                                          | default, used to ignore lower uid/gid's
-`['sssd_conf']['max_id']`                  | `'0'`                                                                          | default, used to ignore higher uid/gid's
-`['ldap_sudo']`                            | `false`                                                                        | Adds ldap enabled sudoers (true/false)
-`['ldap_ssh']`                             | `false`                                                                        | Adds ldap enabled ssh keys (true/false)
-`['ldap_autofs']`                          | `false`                                                                        | Adds ldap enabled autofs config (true/false)
-`['uninstall_nscd']`                       | `true`                                                                         | Allows configuration to not uninstall nscd package if required
+- [sssd_ldap](documentation/sssd_ldap_sssd_ldap.md)
 
-## Recipes
+## Migration
 
-- default: Installs and configures sssd daemon
+Upgrading from older cookbook releases that used `sssd_ldap::default` and `node['sssd_ldap']` attributes is a breaking change. Replace recipe includes and node attributes with the `sssd_ldap` resource. See [migration.md](migration.md).
 
 ## CA Certificates
 
@@ -74,7 +46,7 @@ If you manage your own CA then the easiest way to inject the certificate for sys
 
 ### RHEL
 
-```
+```bash
 cp ca.crt /etc/pki/ca-trust/source/anchors
 update-ca-trust enable
 update-ca-trust extract
@@ -82,7 +54,7 @@ update-ca-trust extract
 
 ### Debian
 
-```
+```bash
 cp ca.crt /usr/local/share/ca-certificates
 update-ca-certificates
 ```

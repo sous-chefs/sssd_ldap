@@ -1,0 +1,7 @@
+---
+name: default
+title: Default integration tests for sssd_ldap
+maintainer: Sous Chefs
+license: Apache-2.0
+summary: Verifies the sssd_ldap resource
+version: 1.0.0
