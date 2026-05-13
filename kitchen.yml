@@ -1,33 +1,50 @@
 driver:
   name: vagrant
 
+transport:
+  max_wait_until_ready: 600
+  connection_retries: 10
+  connection_retry_sleep: 10
+
 provisioner:
   name: chef_infra
+  product_name: chef
+  product_version: latest
+  channel: stable
   deprecations_as_errors: true
-  chef_license: accept-no-persist
+  enforce_idempotency: true
+  multiple_converge: 2
+  chef_license: accept
 
 verifier:
   name: inspec
 
 platforms:
-
   - name: almalinux-8
-  - name: amazonlinux-2
-  - name: centos-7
-  - name: centos-stream-8
-  - name: debian-10
+  - name: almalinux-9
+  - name: amazonlinux-2023
+  - name: centos-stream-9
   - name: debian-11
+  - name: debian-12
+  - name: debian-13
   - name: fedora-latest
-  - name: opensuse-leap-15
+  - name: oraclelinux-8
+  - name: oraclelinux-9
   - name: rockylinux-8
-  - name: ubuntu-18.04
-  - name: ubuntu-20.04
+  - name: rockylinux-9
+  - name: ubuntu-22.04
+  - name: ubuntu-24.04
+
+x-run_lists:
+  default: &default_run_list
+    - recipe[test::default]
+
+x-verifiers:
+  default: &default_verifier
+    inspec_tests:
+      - path: test/integration/default
 
 suites:
   - name: default
-    run_list: sssd_ldap::default
-    attributes: {
-      sssd_ldap: {
-        ldap_sudo: true
-      }
-    }
+    run_list: *default_run_list
+    verifier: *default_verifier
