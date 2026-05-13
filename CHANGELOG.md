@@ -2,6 +2,22 @@
 
 This file is used to list changes made in each version of sssd_ldap.
 
+## [6.0.0](https://github.com/sous-chefs/sssd_ldap/compare/v5.2.10...v6.0.0) (2026-05-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate sssd_ldap to custom resources ([#80](https://github.com/sous-chefs/sssd_ldap/issues/80))
+
+### Features
+
+* migrate sssd_ldap to custom resources ([#80](https://github.com/sous-chefs/sssd_ldap/issues/80)) ([f31a697](https://github.com/sous-chefs/sssd_ldap/commit/f31a69753b123767773e63ac6981a621d8783253))
+
+
+### Bug Fixes
+
+* **ci:** Update workflows to use release pipeline ([#75](https://github.com/sous-chefs/sssd_ldap/issues/75)) ([a5bbe42](https://github.com/sous-chefs/sssd_ldap/commit/a5bbe42f87111c65ecb6e6a3bb17628db17c7978))
+
 ## [5.2.10](https://github.com/sous-chefs/sssd_ldap/compare/5.2.9...v5.2.10) (2025-10-16)
 
 
