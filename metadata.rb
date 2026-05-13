@@ -3,7 +3,7 @@ maintainer        'Sous Chefs'
 maintainer_email  'help@sous-chefs.org'
 license           'Apache-2.0'
 description       'Provides an sssd_ldap resource for LDAP-backed SSSD configuration'
-version           '5.2.10'
+version           '6.0.0'
 source_url        'https://github.com/sous-chefs/sssd_ldap'
 issues_url        'https://github.com/sous-chefs/sssd_ldap/issues'
 
